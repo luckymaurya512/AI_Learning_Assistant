@@ -128,7 +128,7 @@ const DocumentDetailPage = () => {
         setSummary(res.summary);
       }
     } catch (err) {
-      toast.error('Error generating summary');
+      toast.error(err.response?.data?.message || 'Error generating summary');
     } finally {
       setSummaryLoading(false);
     }
@@ -149,7 +149,7 @@ const DocumentDetailPage = () => {
         setExplanation(res.explanation);
       }
     } catch (err) {
-      toast.error('Error explaining concept');
+      toast.error(err.response?.data?.message || 'Error explaining concept');
     } finally {
       setExplainLoading(false);
     }

@@ -15,9 +15,9 @@ const getGenAIModel = (systemInstruction) => {
   }
   const genAI = new GoogleGenerativeAI(apiKey);
   
-  // Use gemini-2.5-flash for speed and reliability in learning context
+  // Use gemini-1.5-flash for speed and reliability in learning context
   return genAI.getGenerativeModel({
-    model: 'gemini-2.5-flash',
+    model: 'gemini-1.5-flash',
     ...(systemInstruction && { systemInstruction })
   });
 };
